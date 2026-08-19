@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Parabéns, a sua vaga está reservada · Agenda Lucrativa</title>
+<meta name="description" content="Inscrição concluída no workshop Agenda Lucrativa · 3 de outubro · UPTEC Porto."/>
+<meta name="robots" content="noindex"/>
+
+<!-- Meta Pixel + CAPI -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '27979979438263557');
+
+function trackEvent(name, extra){
+  var id = 'ev_' + Date.now() + '_' + Math.random().toString(36).slice(2,10);
+  try { fbq('track', name, extra || {}, { eventID: id }); } catch(e){}
+  try {
+    fetch('capi.php', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      keepalive: true,
+      body: JSON.stringify({ event_name: name, event_id: id, event_source_url: location.href })
+    });
+  } catch(e){}
+  return id;
+}
+
+trackEvent('PageView');
+trackEvent('CompleteRegistration');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=27979979438263557&ev=PageView&noscript=1"/></noscript>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f6f1e8;--bg-2:#efe8db;--bg-3:#faf7f1;
+  --dark:#171310;--dark-card:#241e18;
+  --ink:#241f19;--ink-soft:#57504a;--muted:#8d857a;--muted-d:#a99f90;--cream:#f4ead8;
+  --gold:#b98a44;--gold-deep:#8a6420;--gold-hi:#f5dda8;--gold-rgb:185,138,68;
+  --grad-gold:linear-gradient(135deg,#5c3f10 0%,#8a6420 12%,#c4944a 25%,#e8be72 38%,#f5dda8 50%,#e8be72 62%,#c4944a 75%,#8a6420 88%,#5c3f10 100%);
+  --grad-gold-soft:linear-gradient(135deg,#a9812f,#d6ad62,#f0d493,#d6ad62,#a9812f);
+  --grad-btn:linear-gradient(135deg,#8a6420,#c09a4e,#8a6420);
+  --line:rgba(36,31,25,.1);--line-gold:rgba(185,138,68,.32);
+  --sh-md:0 14px 34px -16px rgba(36,31,25,.22);
+  --sh-lg:0 30px 70px -28px rgba(36,31,25,.32);
+  --sh-gold:0 18px 44px -18px rgba(138,100,32,.5);
+  --f-display:'Bodoni Moda',serif;--f-serif:'Cormorant Garamond',serif;--f-body:'Inter',sans-serif;
+  --ease:cubic-bezier(.22,.8,.24,1);--ease-soft:cubic-bezier(.4,.14,.3,1);
+  --r-md:16px;--r-lg:26px;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--f-body);background:var(--bg);color:var(--ink);line-height:1.75;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;min-height:100vh}
+::selection{background:rgba(var(--gold-rgb),.28);color:var(--ink)}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:var(--bg-2)}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#c4944a,#8a6420);border-radius:4px}
+.wrap{width:min(880px,92%);margin-inline:auto;position:relative;z-index:2}
+
+/* fundo */
+.noise{position:fixed;inset:0;z-index:80;pointer-events:none;opacity:.045;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.grid-bg{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(36,31,25,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(36,31,25,.045) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 25%,transparent 75%);
+  mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 25%,transparent 75%)}
+.orb{position:fixed;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;animation:float 14s ease-in-out infinite}
+.orb-1{width:520px;height:520px;top:-160px;right:-140px;background:radial-gradient(circle,rgba(214,173,98,.28),transparent 68%)}
+.orb-2{width:440px;height:440px;bottom:-160px;left:-150px;background:radial-gradient(circle,rgba(185,138,68,.18),transparent 68%);animation-delay:-6s}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-26px,24px) scale(1.05)}}
+
+/* confetti dourado */
+.cf{position:fixed;top:-4vh;z-index:90;pointer-events:none;border-radius:1px;
+  animation:cfFall linear forwards}
+@keyframes cfFall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+
+main{position:relative;z-index:2;padding:clamp(56px,9vh,100px) 0 60px;text-align:center}
+
+/* logotipo */
+.logotype{display:flex;width:fit-content;margin:0 auto clamp(36px,6vh,56px);flex-direction:column;align-items:center;gap:8px}
+.logotype .lt-a{font-weight:500;letter-spacing:.66em;text-indent:.66em;font-size:clamp(.66rem,1.4vw,.9rem);color:var(--ink);text-transform:uppercase}
+.logotype .lt-l{font-family:var(--f-display);font-weight:500;font-size:clamp(2.2rem,6vw,4rem);line-height:1;text-transform:uppercase;letter-spacing:.05em;
+  background:var(--grad-gold);background-size:240% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:shimmer 9s var(--ease-soft) infinite}
+@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.logotype .lt-rule{display:flex;align-items:center;gap:12px;margin-top:6px}
+.logotype .lt-rule::before,.logotype .lt-rule::after{content:'';width:52px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.logotype .lt-rule::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.logotype .lt-rule span{font-family:var(--f-serif);font-style:italic;font-size:.85rem;color:var(--gold-deep);letter-spacing:.12em}
+
+/* selo de confirmação */
+.seal{width:96px;height:96px;margin:0 auto 30px;position:relative;display:flex;align-items:center;justify-content:center}
+.seal::before{content:'';position:absolute;inset:0;border-radius:50%;padding:2px;
+  background:conic-gradient(from 0deg,#8a6420,#e8be72,#f5dda8,#e8be72,#8a6420);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;
+  animation:spin 8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.seal::after{content:'';position:absolute;inset:-14px;border-radius:50%;
+  background:radial-gradient(circle,rgba(214,173,98,.28),transparent 70%);animation:sealPulse 2.6s ease-in-out infinite}
+@keyframes sealPulse{0%,100%{opacity:.5;transform:scale(.96)}50%{opacity:1;transform:scale(1.06)}}
+.seal svg{width:44px;height:44px;position:relative;z-index:2}
+.seal svg path{stroke:var(--gold-deep);stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:60;stroke-dashoffset:60;animation:draw 1s var(--ease) .5s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+/* título */
+.kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;
+  border:1px solid var(--line-gold);border-radius:100px;padding:8px 20px;background:rgba(255,252,246,.7);
+  font-size:.62rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-deep)}
+.kicker::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--gold);animation:pulse 2.2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.45)}}
+h1{font-family:var(--f-display);font-weight:500;font-size:clamp(2.1rem,5.4vw,3.6rem);line-height:1.12;letter-spacing:.005em;margin-bottom:18px}
+h1 em{font-family:var(--f-serif);font-style:italic;font-weight:500;
+  background:linear-gradient(135deg,#5c3f10,#8a6420,#b9893b,#8a6420,#5c3f10);background-size:240% auto;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:shimmer 9s var(--ease-soft) infinite}
+.lead{max-width:560px;margin:0 auto;font-size:1.08rem;line-height:1.85;color:var(--ink-soft)}
+.lead strong{color:var(--ink);font-weight:600}
+
+/* ficha do evento */
+.event{margin:clamp(36px,5vh,52px) auto;max-width:680px;
+  background:rgba(255,253,248,.85);backdrop-filter:blur(8px);
+  border:1px solid var(--line-gold);border-radius:var(--r-lg);
+  display:grid;grid-template-columns:repeat(3,1fr);
+  box-shadow:var(--sh-md);position:relative;overflow:hidden}
+.event::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad-gold-soft)}
+.ev{padding:24px 16px;position:relative}
+.ev+.ev::before{content:'';position:absolute;left:0;top:24%;bottom:24%;width:1px;background:var(--line)}
+.ev .k{font-size:.58rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.ev .v{font-family:var(--f-serif);font-size:1.25rem;font-weight:600;color:var(--ink);line-height:1.15}
+.ev .s{font-size:.74rem;color:var(--muted);margin-top:4px;font-weight:500}
+@media(max-width:560px){.event{grid-template-columns:1fr}.ev+.ev::before{display:none}.ev+.ev{border-top:1px solid var(--line)}}
+
+/* próximos passos */
+.steps{max-width:640px;margin:0 auto;text-align:left;display:flex;flex-direction:column;gap:14px}
+.steps-title{text-align:center;font-size:.66rem;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:18px;
+  display:flex;align-items:center;justify-content:center;gap:14px}
+.steps-title::before,.steps-title::after{content:'';width:38px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.steps-title::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.step{display:flex;gap:18px;align-items:flex-start;background:var(--bg-3);border:1px solid var(--line);
+  border-radius:var(--r-md);padding:22px 26px;position:relative;overflow:hidden;
+  transition:transform .45s var(--ease),box-shadow .45s ease,border-color .45s ease}
+.step:hover{transform:translateY(-4px);box-shadow:var(--sh-md);border-color:var(--line-gold)}
+.step .n{font-family:var(--f-display);font-size:1.6rem;line-height:1;flex-shrink:0;width:40px;height:40px;
+  display:flex;align-items:center;justify-content:center;border-radius:50%;
+  border:1px solid var(--line-gold);color:var(--gold-deep);background:rgba(255,253,248,.8)}
+.step h3{font-family:var(--f-serif);font-weight:600;font-size:1.2rem;color:var(--ink);margin-bottom:4px;line-height:1.3}
+.step p{font-size:.92rem;line-height:1.7;color:var(--ink-soft)}
+.step p strong{color:var(--ink);font-weight:600}
+
+/* botão whatsapp */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  font-size:.74rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:#fdf7ea;background:var(--grad-btn);background-size:200% auto;
+  padding:20px 44px;border:none;cursor:pointer;text-decoration:none;
+  border-radius:24px 4px 24px 4px;overflow:hidden;margin-top:34px;
+  transition:transform .45s var(--ease),box-shadow .45s ease,background-position .6s ease;
+  box-shadow:var(--sh-gold);animation:btnPulse 3.2s ease-in-out infinite}
+.btn:hover{transform:translateY(-3px);background-position:100% 0}
+.btn::after{content:'';position:absolute;top:0;left:-120%;width:55%;height:100%;
+  background:linear-gradient(115deg,transparent,rgba(255,251,240,.34),transparent);
+  transform:skewX(-22deg);transition:left .8s var(--ease)}
+.btn:hover::after{left:150%}
+@keyframes btnPulse{0%,100%{box-shadow:0 18px 44px -18px rgba(138,100,32,.5)}50%{box-shadow:0 18px 58px -12px rgba(138,100,32,.72)}}
+.btn-note{margin-top:14px;font-size:.8rem;color:var(--muted)}
+
+/* frase final */
+.closing{margin:clamp(48px,7vh,64px) auto 0;max-width:560px;padding-top:34px;border-top:1px solid var(--line-gold)}
+.closing p{font-family:var(--f-serif);font-style:italic;font-size:clamp(1.2rem,2.4vw,1.5rem);line-height:1.6;color:var(--ink)}
+.closing .who{margin-top:14px;font-size:.6rem;font-weight:600;letter-spacing:.38em;text-transform:uppercase;color:var(--muted)}
+
+/* footer */
+footer{position:relative;z-index:2;background:var(--dark);padding:34px 0;text-align:center;margin-top:clamp(48px,8vh,80px)}
+footer .l{font-family:var(--f-display);font-size:1.3rem;text-transform:uppercase;letter-spacing:.05em;
+  background:var(--grad-gold);background-size:240% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+footer p{font-size:.74rem;color:var(--muted-d);margin-top:8px}
+
+/* reveal sequencial */
+.rv{opacity:0;transform:translateY(26px);animation:up .85s var(--ease-soft) forwards}
+@keyframes up{to{opacity:1;transform:translateY(0)}}
+.d1{animation-delay:.15s}.d2{animation-delay:.3s}.d3{animation-delay:.45s}.d4{animation-delay:.6s}
+.d5{animation-delay:.75s}.d6{animation-delay:.9s}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .rv{opacity:1!important;transform:none!important}
+  .cf{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="noise" aria-hidden="true"></div>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="orb orb-1" aria-hidden="true"></div>
+<div class="orb orb-2" aria-hidden="true"></div>
+
+<main>
+  <div class="wrap">
+
+    <div class="logotype rv">
+      <span class="lt-a">Agenda</span>
+      <span class="lt-l">Lucrativa</span>
+      <span class="lt-rule"><span>workshop presencial</span></span>
+    </div>
+
+    <div class="seal rv d1" aria-hidden="true">
+      <svg viewBox="0 0 48 48"><path d="M12 25l8 8 16-18"/></svg>
+    </div>
+
+    <div class="kicker rv d1">Inscrição recebida</div>
+
+    <h1 class="rv d2">Parabéns!<br/>A sua vaga está <em>reservada.</em></h1>
+
+    <p class="lead rv d3">Você acabou de fazer o que a maioria adia: <strong>investir num dia que muda a forma como o seu salão atrai clientes.</strong> O seu lugar está reservado. Agora é só preparar-se para o dia 3.</p>
+
+    <div class="event rv d4">
+      <div class="ev"><div class="k">Data</div><div class="v">3 de Outubro</div><div class="s">Sábado · dia inteiro</div></div>
+      <div class="ev"><div class="k">Local</div><div class="v">UPTEC · Porto</div><div class="s">R. Alfredo Allen 455-461</div></div>
+      <div class="ev"><div class="k">Turma</div><div class="v">15 empresárias</div><div class="s">Acompanhamento de perto</div></div>
+    </div>
+
+    <div class="rv d5">
+      <div class="steps-title">Próximos passos</div>
+      <div class="steps">
+        <div class="step">
+          <span class="n">1</span>
+          <div>
+            <h3>Reserve o dia 3 de outubro na sua agenda</h3>
+            <p>É um sábado, <strong>dia inteiro</strong>, presencial no UPTEC. Organize já a sua equipa e as suas marcações para estar 100% presente.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="n">2</span>
+          <div>
+            <h3>Prepare o seu notebook</h3>
+            <p>O dia é mão na massa: traga o <strong>notebook</strong> e pense no serviço que quer promover. Você vai sair com o plano pronto para aplicar no dia seguinte.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="n">3</span>
+          <div>
+            <h3>Fique atenta ao seu WhatsApp</h3>
+            <p>Vamos enviar por lá <strong>todas as informações do evento</strong>: orientações de chegada, horários e o que levar.</p>
+          </div>
+        </div>
+      </div>
+
+      <a class="btn" href="https://wa.me/351929033892?text=Ol%C3%A1!%20Acabei%20de%20me%20inscrever%20no%20workshop%20Agenda%20Lucrativa%20e%20tenho%20uma%20d%C3%BAvida." onclick="trackEvent('Contact')">Alguma dúvida? Fale connosco →</a>
+      <p class="btn-note">WhatsApp · +351 929 033 892</p>
+    </div>
+
+    <div class="closing rv d6">
+      <p>"No dia 4 de outubro, a sua agenda começa a contar uma história diferente. Até lá!"</p>
+      <div class="who">Nedson Aliandro · Thiago Dantas</div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="l">Lucrativa</div>
+  <p>© 2026 Agenda Lucrativa · Monjex Marketing × UpMax Pro · Porto, Portugal</p>
+</footer>
+
+<script>
+// confetti dourado discreto
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var cores=['#c4944a','#e8be72','#f5dda8','#8a6420','#d6ad62'];
+  for(var i=0;i<46;i++){
+    var c=document.createElement('div');
+    c.className='cf';
+    var s=4+Math.random()*6;
+    c.style.width=s+'px';
+    c.style.height=(s*0.45)+'px';
+    c.style.left=(Math.random()*100)+'vw';
+    c.style.background=cores[i%cores.length];
+    c.style.opacity=.85;
+    c.style.animationDuration=(3.2+Math.random()*3.4)+'s';
+    c.style.animationDelay=(Math.random()*1.4)+'s';
+    document.body.appendChild(c);
+    (function(el){setTimeout(function(){el.remove()},9000)})(c);
+  }
+})();
+</script>
+</body>
+</html>
